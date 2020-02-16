@@ -1,0 +1,40 @@
+baseUrl = "https://MrYaoYuWei.github.io"
+languageCode = "zh-Hans"
+defaultContentLanguage = "zh"
+title = "沫子酱技术博客"
+theme = "dream"
+
+copyright = '<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。'
+
+googleAnalytics = "UA-98295641-1"
+
+enableRobotsTXT = true
+
+hasCJKLanguage = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  # background = "black"
+  backgroundImage = "/me/background.jpeg"
+  linkColor = "seagreen"
+
+  author = "沫子酱"
+  description = "技术博客～"
+  avatar = "/me/yyw.jpeg"
+  motto = "二次元|技術宅|學生|直白少男|沒有情商的弟弟|寸头|偶爾写写代码|人品差"
+
+  email = "godyuwei@gmail.com"
+  github = "MrYaoYuWei"
+
+  siteStartYear = 2019
+
+  favicon = "/favicon.ico"
+
+  # dark mode
+  darkLinkColor = "darkseagreen"
+  darkNav = true 
+  dark404Button = true
