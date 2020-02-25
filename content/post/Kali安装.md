@@ -13,7 +13,7 @@ how to install kali linux
 
 ##  Kali Linux 简介
 
-* Kali Linux是一个基于Debian的 Linux发行版，旨在迚行高级渗透测试和安全审计。
+* Kali Linux是一个基于Debian的 Linux发行版，旨在进行高级渗透测试和安全审计。
 
 * 包括 600多种渗透测试工具
 
@@ -23,9 +23,9 @@ how to install kali linux
 
 * 广泛的无线设备支持
 
-* 安全环境开发 :  Kali Linux团队由一小部分人组成，他们是唯一可信任的提交包并不存储 库交互的人，所有这些都是使用多个安全协议完成的
+* 安全环境开发 :  Kali Linux团队由一小部分人组成，所有这些都是使用多个安全协议完成的
 
-* GPG签名包和存储库 ： Kali Linux中的每个包都由构建和提交它的每个开发人员签名，并且存 储库随后也会对包签名 
+* GPG签名包和存储库 ： Kali Linux中的每个包都由构建和提交它的每个开发人员签名，并且存储库随后也会对包签名 
 
 * ARMEL和ARMHF支持
 
@@ -75,9 +75,8 @@ apt update
 >apt update ，apt upgrade 和apt dist-upgrade 的区别 
 >
 >* apt update 的作用是从/etc/apt/sources.list 文件中定义的源中获取的最新的软件包列表。 即运行 apt update并没有更新软件，而是相当于windows下面的检查更新，获取的是软件的状态
->* apt upgrade 则是更据 update命令获取的最新的软件包列表，去真正地更新软件，系统将现有的 Package升级,如果有相依性的问题,而此相依性需要安装其它新的 Package 戒影响到其它 Package的相依性时,此 Package就不会被升级,会保留下来.
->* apt dist-upgrade:可以聪明的解决相依性的问题,如果有相依性问题,需要安装/移除新的Package,就会 试着去安装/移除它
+>* apt upgrade 则是更据 update命令获取的最新的软件包列表，去真正地更新软件，系统将现有的 Package升级,如果有相依性的问题,而此相依性需要安装其它新的 Package 影响到其它 Package的相依性时,此 Package就不会被升级,会保留下来.
+>* apt dist-upgrade:可以聪明的解决相依性的问题,如果有相依性问题,需要安装/移除新的Package,就会试着去安装/移除它
 
 ## Kali虚拟机快照
 
-![image-20200206150525492](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200206150525492.png)
